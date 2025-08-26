@@ -404,6 +404,95 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   background: #d4b851;
 }
 
+/* New Enhanced Animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes float-enhanced {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-15px) rotate(1deg); 
+  }
+  50% { 
+    transform: translateY(-30px) rotate(0deg); 
+  }
+  75% { 
+    transform: translateY(-15px) rotate(-1deg); 
+  }
+}
+
+.animate-float {
+  animation: float-enhanced 6s ease-in-out infinite;
+}
+
+/* Enhanced Glassmorphism */
+.backdrop-blur-enhanced {
+  backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-shift {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+.animate-gradient-text {
+  background: linear-gradient(-45deg, #C1A444, #FFD700, #FFA500, #C1A444);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Hover Effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Particle Animation */
+@keyframes particle-float {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translateY(-20px) translateX(10px); 
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-40px) translateX(-5px); 
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-20px) translateX(-10px); 
+    opacity: 0.6;
+  }
+}
+
+.animate-particle {
+  animation: particle-float 4s ease-in-out infinite;
+}
+
 /* Responsive adjustments */
 
 @media only screen and (max-width: 980px) {
