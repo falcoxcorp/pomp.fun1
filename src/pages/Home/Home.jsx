@@ -197,35 +197,3 @@ const Home = () => {
 };
 
 export default Home;
-                  <button
-                    key={tag}
-                    type="button"
-                    className={`items-center justify-center h-10 px-9 text-center font-medium rounded-full overflow-hidden whitespace-nowrap lg:text-base ${activeTable === `Tag ${tag}` ? 'bg-white' : 'text-[#fff] dark:text-purple-500 hover:bg-gray-400'}`}
-                    onClick={() => handleButtonClick(`Tag ${tag}`)}
-                  >
-                    {t(tag)}
-                  </button>
-                ))}
-              </div>
-
-              <div className="createrightbtn mt-4 lg:mt-0">
-                <Link
-                  to="/create-token"
-                  className="inline-block font-bold px-6 py-3 text-white bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 rounded-full text-center shadow-lg transition-all duration-200 ease-in-out text-xs sm:text-sm lg:text-base"
-                >
-                  {t('createToken')}
-                </Link>
-              </div>
-            </div>
-
-            <div className="mt-0">
-              <CardList activeTable={activeTable} />
-            </div>
-          </div>
-        </div>
-      </main>
-    </>
-  );
-};
-
-export default Home;
