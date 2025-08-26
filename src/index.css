@@ -149,6 +149,194 @@
   box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
 }
 
+/* Enhanced Card Styles */
+.cards {
+  position: relative;
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cards::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 212, 255, 0.1),
+    rgba(179, 71, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.cards:hover::before {
+  left: 100%;
+}
+
+.cards:hover {
+  transform: translateY(-15px) scale(1.02);
+  border-color: var(--neon-blue);
+  box-shadow: 
+    0 25px 50px rgba(0, 212, 255, 0.4),
+    0 0 0 1px rgba(0, 212, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cards .card-body {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+.cards .card-img-top {
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.cards:hover .card-img-top {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+  border-color: var(--neon-blue);
+}
+
+.cards .card-title {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cards:hover .card-title {
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+.cards .progress {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.cards .progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: progress-shine 2s infinite;
+}
+
+@keyframes progress-shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.cards .progress-bar {
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.cards:hover .progress-bar {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+}
+
+.cards .card-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Rajdhani', sans-serif;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.cards:hover .card-text {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cards .price {
+  color: var(--neon-blue);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  font-family: 'Orbitron', monospace;
+}
+
+.cards .hardcap {
+  color: var(--neon-pink);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(255, 71, 179, 0.5);
+}
+
+.cards .MCap {
+  background: var(--secondary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-family: 'Orbitron', monospace;
+}
+
+.cards .socialicon i {
+  background: linear-gradient(145deg, #2a2a2a, #404040);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cards .socialicon i:hover {
+  background: var(--accent-gradient);
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+  color: white;
+}
+
+.cards hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 15px 0;
+}
+
+/* Floating animation for cards */
+.cards {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+.cards:nth-child(2n) {
+  animation-delay: -2s;
+}
+
+.cards:nth-child(3n) {
+  animation-delay: -4s;
+}
+
+@keyframes float-card {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.cards:hover {
+  animation-play-state: paused;
+}
 /* Investment CTA buttons */
 .cta-button {
   background: var(--primary-gradient);
