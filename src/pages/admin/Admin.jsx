@@ -527,10 +527,10 @@ const Admin = () => {
 
                             {/* Card 8 */}
                             <div className="bsbox bg-gray-200 p-4 rounded-lg shadow-md">
-                                <h3 className="text-lg font-semibold mb-2">Set Pool Config(All values in Wei)</h3>
+                                <h3 className="text-lg font-semibold mb-2">Configurar Pool de Tokens (Valores en Wei)</h3>
                                 <input
                                     type="number"
-                                    placeholder="Enter Pool Config Index"
+                                    placeholder="Número de Pool (ej: 20)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.index}
                                     onChange={(e) => handlePoolChange('index', e.target.value)}
@@ -538,49 +538,49 @@ const Admin = () => {
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Enter Initial Virtual Base Reserve"
+                                    placeholder="Reserva Base Inicial (tokens disponibles)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.initialVirtualBaseReserve}
                                     onChange={(e) => handlePoolChange('initialVirtualBaseReserve', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Enter Initial Virtual Quote Reserve"
+                                    placeholder="Reserva ETH Inicial (precio base)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.initialVirtualQuoteReserve}
                                     onChange={(e) => handlePoolChange('initialVirtualQuoteReserve', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Enter Total Selling Base Amount"
+                                    placeholder="Total de Tokens para Vender"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.totalSellingBaseAmount}
                                     onChange={(e) => handlePoolChange('totalSellingBaseAmount', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Enter Max Listing Base Amount"
+                                    placeholder="Máximo de Tokens para Listar"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.maxListingBaseAmount}
                                     onChange={(e) => handlePoolChange('maxListingBaseAmount', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Enter Max Listing Quote Amount"
+                                    placeholder="Máximo ETH para Recaudar"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.maxListingQuoteAmount}
                                     onChange={(e) => handlePoolChange('maxListingQuoteAmount', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Enter Default Listing Rate"
+                                    placeholder="Precio por Token (tasa de cambio)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.defaultListingRate}
                                     onChange={(e) => handlePoolChange('defaultListingRate', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Enter Listing Fee"
+                                    placeholder="Comisión por Listar Token"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.listingFee}
                                     onChange={(e) => handlePoolChange('listingFee', e.target.value)}
@@ -590,7 +590,7 @@ const Admin = () => {
                                     className={`w-full p-2 rounded-md transition-colors ${Object.values(updatedPoolConfig).every(value => value !== '') ? 'bg-gold gbutton text-white hover:bg-gold' : 'bg-gray-400 text-gray-600 cursor-not-allowed'}`}
                                     disabled={Object.values(updatedPoolConfig).some(value => value === '')}
                                 >
-                                    Set Pool Config
+                                    Guardar Configuración
                                 </button>
                             </div>
                             {/* Card 9 */}
