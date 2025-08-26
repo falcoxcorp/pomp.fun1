@@ -3,7 +3,7 @@ export const daimond = {
     '97': '0x4fDB78C09535C3848B660b1b44B3d5EF8a5dDE8b',
 }
 
-export const admin = '0x3FD8A2D274a7B942B4cDe3a09123947c601225FE'
+export const admin = '0x969A222549c022AD0B262cB16B6770337373aA36'
 
 export const tags = ['Meme', 'AI', 'DeFi', 'Games', 'Infra', 'De-Sci', 'Social', 'Depin', 'Charity', 'Others'];
 
