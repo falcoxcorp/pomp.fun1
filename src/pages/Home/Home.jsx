@@ -58,12 +58,6 @@ const Home = () => {
                   alt="FalcoX Elite Logo" 
                   style={{width: '120px', height: '120px', marginBottom: '1rem', filter: 'drop-shadow(0 0 20px var(--neon-blue))'}}
                 />
-                <h3 style={{color: 'var(--neon-blue)', fontFamily: 'Orbitron', fontSize: '1.2rem', marginBottom: '0.5rem'}}>
-                  ELITE MEMBERS ONLY
-                </h3>
-                <p style={{color: '#888', fontSize: '0.9rem'}}>
-                  Invitation-only access to premium investment opportunities
-                </p>
               </div>
             </div>
           </div>
