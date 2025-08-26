@@ -21,13 +21,13 @@ const Home = () => {
         <div className='container'>
           <div className='col-md-7'>
             <h1>Discover the power of <br></br>FalcoX </h1>
-            <h2>like never before</h2>
+            <h2>Empowering Your Crypto Journey</h2>
             <p>At Falcox we connect marketing and market making with results that transform projects into
               success stories. We design precise soluctions that generate natural attraction for investors, ensuring solid and sustainable growth for our clients.</p>
-            <p>Trust the experience that makes the difference. Folcox, where your vision becomes reality.</p>
+            <p>Trust the experience that makes the difference. FalcoX - Where Innovation Meets Opportunity, Transform Your Vision Into Reality.</p>
           </div>
           <div className='col-md-5'>
-            <img src="./images/sliderimages.png" className="sliders" alt="sliderimages" />
+            <img src="https://photos.pinksale.finance/file/pinksale-logo-upload/1756183262709-0df3b8b4e8a5cdaa2a70aba07bbc4c3e.png" className="sliders" alt="FalcoX Logo" />
           </div>
         </div>
       </section>
