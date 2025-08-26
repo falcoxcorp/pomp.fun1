@@ -1047,6 +1047,17 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   z-index: 1;
 }
 
+.premium-navbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  z-index: 10;
+}
+
 .navbar-left,
 .navbar-right {
   position: relative;
@@ -1081,10 +1092,26 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   padding: 0.5rem 1rem;
   border-radius: 20px;
   transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   overflow: hidden;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: navbar-float 4s ease-in-out infinite;
+}
+
+.navbar-link:nth-child(2) {
+  animation-delay: -1s;
+}
+
+.navbar-link:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.navbar-link:nth-child(4) {
+  animation-delay: -3s;
 }
 
 .navbar-link::before {
@@ -1094,38 +1121,74 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s ease;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gold-gradient);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .navbar-link:hover::before {
   left: 100%;
 }
 
+.navbar-link:hover::after {
+  width: 80%;
+}
+
 .navbar-link:hover {
-  color: var(--neon-blue);
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
-  border-color: var(--neon-blue);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  color: white;
+  text-shadow: 
+    0 0 10px rgba(0, 212, 255, 0.8),
+    0 0 20px rgba(0, 212, 255, 0.6),
+    0 0 30px rgba(0, 212, 255, 0.4);
+  border-color: rgba(0, 212, 255, 0.6);
+  background: rgba(0, 212, 255, 0.08);
+  box-shadow: 
+    0 0 25px rgba(0, 212, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 4px 15px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
-  background: rgba(0, 212, 255, 0.1);
+  animation-play-state: paused;
 }
 
 .navbar-link.active {
-  background: var(--gold-gradient);
+  background: linear-gradient(135deg, rgba(193, 164, 68, 0.2), rgba(255, 179, 71, 0.2));
+  border: 1px solid rgba(193, 164, 68, 0.4);
   color: white;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-  border-color: #ffd700;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(255, 215, 0, 0.6);
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-link.active::after {
+  width: 100%;
+  background: var(--gold-gradient);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
 
 .connect-button-wrapper {
   position: relative;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .premium-wallet-button {
-  background: var(--primary-gradient) !important;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)) !important;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
   font-family: 'Orbitron', monospace;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1133,8 +1196,9 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(102, 126, 234, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .premium-wallet-button::before {
@@ -1144,7 +1208,7 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--gold-gradient);
+  background: linear-gradient(90deg, transparent, var(--primary-gradient), var(--gold-gradient));
   transition: left 0.3s ease;
   z-index: -1;
 }
@@ -1155,11 +1219,21 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
 
 .premium-wallet-button:hover {
   transform: scale(1.05);
-  border-color: var(--neon-blue);
+  border-color: rgba(0, 212, 255, 0.8);
+  background: rgba(0, 212, 255, 0.1) !important;
   box-shadow: 
-    0 8px 25px rgba(0, 212, 255, 0.4),
-    0 0 0 1px rgba(0, 212, 255, 0.3);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    0 8px 30px rgba(0, 212, 255, 0.5),
+    0 0 0 1px rgba(0, 212, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(0, 212, 255, 0.6);
+}
+
+/* Floating animation for navbar elements */
+@keyframes navbar-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
 }
 
 /* Responsive navbar adjustments */
