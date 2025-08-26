@@ -732,6 +732,302 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Admin Panel Premium Styles */
+.adminpanel {
+  background: var(--dark-gradient);
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.adminpanel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(193, 164, 68, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.adminpanel .container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.adminpanel .dtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(193, 164, 68, 0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.adminpanel .dtitle span {
+  background: var(--neon-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.adminpanel .subtext {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.adminpanel .Dashboard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.adminpanel .Dashboard h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: var(--neon-blue);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(120, 119, 198, 0.5);
+}
+
+.adminpanel .bsbox {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.adminpanel .bsbox:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-blue);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(120, 119, 198, 0.3);
+}
+
+.adminpanel .bsbox h3 {
+  color: var(--gold);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(193, 164, 68, 0.3);
+}
+
+.adminpanel .bsbox p {
+  color: #c0c0c0;
+  margin-bottom: 1rem;
+}
+
+.adminpanel .bsbox input,
+.adminpanel .bsbox select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.75rem;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.adminpanel .bsbox input:focus,
+.adminpanel .bsbox select:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 15px rgba(120, 119, 198, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.adminpanel .bsbox input::placeholder {
+  color: #888;
+}
+
+.adminpanel .gbutton {
+  background: var(--gold-gradient);
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(193, 164, 68, 0.3);
+}
+
+.adminpanel .gbutton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(193, 164, 68, 0.4);
+  filter: brightness(1.1);
+}
+
+.adminpanel .gbutton:disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.adminpanel .Running {
+  background: var(--success-gradient);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.adminpanel .Running:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.adminpanel .stat-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.adminpanel .stat-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--neon-pink);
+  box-shadow: 0 8px 25px rgba(255, 119, 198, 0.2);
+}
+
+.adminpanel .stat-item h3 {
+  color: var(--neon-blue);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.adminpanel .stat-item span {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.adminpanel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.adminpanel ul li {
+  color: #e0e0e0;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+.adminpanel ul li:last-child {
+  border-bottom: none;
+}
+
+/* Modal Styles for Admin */
+.adminpanel .fixed {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.adminpanel .fixed .bg-white {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+}
+
+.adminpanel .fixed .bg-white h2 {
+  color: var(--gold);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.adminpanel .fixed .bg-white p {
+  color: #c0c0c0;
+}
+
+.adminpanel .fixed .bg-white img {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.adminpanel .fixed .bg-white a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.adminpanel .fixed .bg-white a:hover {
+  color: var(--neon-pink);
+}
+
+.adminpanel .fixed button {
+  background: var(--danger-gradient);
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.adminpanel .fixed button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Responsive adjustments for admin */
+@media (max-width: 768px) {
+  .adminpanel .dtitle {
+    font-size: 2rem;
+  }
+  
+  .adminpanel .container {
+    padding: 1rem;
+  }
+  
+  .adminpanel .Dashboard {
+    padding: 1.5rem;
+  }
+  
+  .adminpanel .bsbox {
+    padding: 1rem;
+  }
+}
+
 .footer-particles {
   position: absolute;
   top: 0;
