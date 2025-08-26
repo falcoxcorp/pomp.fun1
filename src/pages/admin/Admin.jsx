@@ -531,7 +531,9 @@ const Admin = () => {
                                     {Object.entries(poolConfig).map(([key, value], index) => (
                                         <li key={index}>
                                             {camelToReadable(key)}: {
-                                                typeof value === 'bigint' ? value.toString() : value != null ? value.toString() : 'N/A'
+                                                typeof value === 'bigint' ? 
+                                                    (key === 'index' ? value.toString() : (Number(value) / Math.pow(10, 18)).toString()) 
+                                                    : value != null ? value.toString() : 'N/A'
                                             }
                                         </li>
                                     ))}
