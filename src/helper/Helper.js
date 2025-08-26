@@ -9,8 +9,6 @@ export const tags = ['Meme', 'AI', 'DeFi', 'Games', 'Infra', 'De-Sci', 'Social',
 
 const sonieumRouters = {
     'SoneFi': '0xeCef53F5024Dc8A0cCf0766C6775081e27448425',
-    'UniswapV2': '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
-    'PancakeSwap': '0x10ED43C718714eb63d5aA57B78B54704E256024E',
 }
 
 const bscTestnetRouters = {
