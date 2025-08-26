@@ -42,7 +42,7 @@ const Navbar = () => {
               {t('Admin')} {/* Use translation key */}
             </NavLink>}
             <NavLink
-              to="#"
+              to="/kyc"
               className="navbar-link text-sm font-semibold font-bold"
             >
               {t('KYC')} {/* Use translation key */}
