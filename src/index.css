@@ -881,6 +881,29 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
 .adminpanel .bsbox input::placeholder {
   color: #888;
 }
+/* Yellow placeholder text for better visibility */
+.adminpanel input::placeholder,
+.adminpanel textarea::placeholder,
+.adminpanel select::placeholder {
+  color: #ffd700 !important;
+  opacity: 0.8;
+}
+
+.adminpanel input::-webkit-input-placeholder {
+  color: #ffd700 !important;
+  opacity: 0.8;
+}
+
+.adminpanel input::-moz-placeholder {
+  color: #ffd700 !important;
+  opacity: 0.8;
+}
+
+.adminpanel input:-ms-input-placeholder {
+  color: #ffd700 !important;
+  opacity: 0.8;
+}
+
 
 .adminpanel .gbutton {
   background: var(--gold-gradient);
