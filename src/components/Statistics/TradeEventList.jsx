@@ -1,5 +1,6 @@
 import { useAccount, usePublicClient } from 'wagmi';
 import { getBlockNumber } from '@wagmi/core'
+import { getLogsWithChunking } from '../../utils/blockRangeHandler';
 
 // ABI fragment for the Trade event
 const tradeEventAbi = {
@@ -25,13 +26,18 @@ export function useTradeEvents(contractAddress) {
   const fetchEvents = async () => {
 
     const blockNumber = await getBlockNumber(config)
-    const logs = await publicClient.getLogs({
+    
+    // Use the robust block range handler instead of direct getLogs
+    const logs = await getLogsWithChunking(publicClient, {
       address: contractAddress,
       event: tradeEventAbi, // Use the correct ABI here
       fromBlock: blockNumber - 500n, // Starting block
       toBlock: blockNumber, // Fetch logs up to the latest block
-      // fromBlock: blockNumber - 200000n, // Starting block
-      // toBlock: blockNumber - 150000n, // Fetch logs up to the latest block
+    }, {
+      enableLogging: true, // Enable logging for debugging
+      defaultChunkSize: 500, // Start with 500 block chunks
+      maxRetries: 3, // Retry failed requests up to 3 times
+      rateLimitDelay: 100 // 100ms delay between chunk requests
     });
 
     return logs.map((log) => ({
