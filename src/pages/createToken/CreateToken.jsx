@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract } from 'wagmi';
 import { parseEther, formatEther } from 'viem';
-import { toast } from 'react-toastify';
 import ManagerFaucetAbi from '../../helper/ManagerFaucetAbi.json';
 
 const CreateToken = () => {
@@ -46,7 +45,7 @@ const CreateToken = () => {
   useEffect(() => {
     if (isConfirmed && hash) {
       setIsCreating(false);
-      toast.success('Token created successfully!');
+      alert('Token created successfully!');
       // You might want to extract the token address from the transaction receipt
       setCreatedTokenAddress('0x...'); // Replace with actual token address from receipt
     }
@@ -55,7 +54,7 @@ const CreateToken = () => {
   useEffect(() => {
     if (error) {
       setIsCreating(false);
-      toast.error('Error creating token: ' + error.message);
+      alert('Error creating token: ' + error.message);
     }
   }, [error]);
 
@@ -87,12 +86,12 @@ const CreateToken = () => {
     e.preventDefault();
     
     if (!isConnected) {
-      toast.error('Please connect your wallet first');
+      alert('Please connect your wallet first');
       return;
     }
 
     if (!formData.name || !formData.symbol || !formData.description) {
-      toast.error('Please fill in all required fields');
+      alert('Please fill in all required fields');
       return;
     }
 
@@ -118,7 +117,7 @@ const CreateToken = () => {
       });
     } catch (err) {
       setIsCreating(false);
-      toast.error('Error creating token: ' + err.message);
+      alert('Error creating token: ' + err.message);
     }
   };
 
