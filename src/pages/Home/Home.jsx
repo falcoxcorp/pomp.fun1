@@ -56,7 +56,7 @@ const Home = () => {
                 <img 
                   src="https://photos.pinksale.finance/file/pinksale-logo-upload/1756183262709-0df3b8b4e8a5cdaa2a70aba07bbc4c3e.png" 
                   alt="FalcoX Elite Logo" 
-                  style={{width: '200px', height: '200px', marginBottom: '1rem', filter: 'drop-shadow(0 0 20px var(--neon-blue))'}}
+                  style={{width: '300px', height: '300px', marginBottom: '1rem', filter: 'drop-shadow(0 0 20px var(--neon-blue))'}}
                 />
               </div>
             </div>
