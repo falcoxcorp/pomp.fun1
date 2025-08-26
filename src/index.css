@@ -351,6 +351,60 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
 .successbox {background: #323232;  padding: 60px; border: 1px solid #484848; border-radius: 10px;}
 .successbox h3{ font-size:26px !important;    margin-bottom: 25px;}
 
+/* New Homepage Styles */
+.hero-section {
+  min-height: 100vh;
+  position: relative;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Glassmorphism effects */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+
+/* Hover effects for cards */
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C1A444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4b851;
+}
+
+/* Responsive adjustments */
 
 @media only screen and (max-width: 980px) {
   main {padding: 0px 15px !important;}
@@ -371,11 +425,35 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   .lgs h1 {margin-top: 31px;}
   .buttonbox{    height: 80px; background:none;}
   .buttonbox button{border: 1px solid #6a6a6a; margin-right: 4px !important; margin-bottom: 4px !important;    height: 38px;}
+  
+  /* Hero section mobile adjustments */
+  .hero-section {
+    min-height: 80vh;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-section .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
+
 @media only screen and (max-width: 540px) {
 	header .text-sm {font-size: 12px;}
 	header button{font-size: 13px !important;}
 	.extraoptions .col-md-4{ width:100%;}
+	
+	.hero-section h1 {
+    font-size: 2rem !important;
+  }
+  
+  .hero-section .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 ul {
