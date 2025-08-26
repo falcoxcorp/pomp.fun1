@@ -220,9 +220,9 @@ const CreateToken = () => {
                     onChange={(e) => setRouter(e.target.value)}
                     required
                   >
-                    <option value="Select Router">Select Router</option>
+                    <option value="">Select Router</option>
                     {Object.entries(routerAddresses).map(([name, address]) => (
-                      <option key={name} value={name}>
+                      <option key={name} value={name} title={address}>
                         {name}
                       </option>
                     ))}
