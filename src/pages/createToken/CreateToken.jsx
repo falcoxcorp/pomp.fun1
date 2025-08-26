@@ -9,7 +9,7 @@ import { config } from '../../wagmiClient';
 
 const CreateToken = () => {
   const { chain, address } = useAccount();
-  const routerAddresses = routers[chain?.id] || {};
+  const routerAddresses = routers[chain?.id] || [];
   const { writeContractAsync, isPending, isSuccess } = useWriteContract();
 
   const [tokenName, setTokenName] = useState('');
@@ -27,11 +27,6 @@ const CreateToken = () => {
   const [startTime, setStartTime] = useState();
   const [maxPerUser, setMaxPerUser] = useState(0);
   const [hash, setHash] = useState(null);
-
-  // Debug: Log available routers
-  console.log('Chain ID:', chain?.id);
-  console.log('Available routers:', routerAddresses);
-  console.log('Router keys:', Object.keys(routerAddresses));
 
   // Extra Amounts based on percentages
   const [buyAmount, setBuyAmount] = useState(0);
@@ -226,7 +221,7 @@ const CreateToken = () => {
                     required
                   >
                     <option value="Select Router">Select Router</option>
-                    {routerAddresses && Object.entries(routerAddresses).map(([name, address]) => (
+                    {Object.entries(routerAddresses).map(([name, address]) => (
                       <option key={name} value={name}>
                         {name}
                       </option>
