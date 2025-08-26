@@ -1,6 +1,235 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Advanced Typography and Visual Effects */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Cryptobit-inspired color scheme */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+  --gold-gradient: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+  --neon-blue: #00d4ff;
+  --neon-purple: #b347ff;
+  --neon-pink: #ff47b3;
+}
+
+/* Glowing text effects */
+.glow-text {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor; }
+  to { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor; }
+}
+
+/* Animated gradient backgrounds */
+.animated-gradient {
+  background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating particles effect */
+.particles-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.particles-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, var(--neon-blue), transparent),
+    radial-gradient(2px 2px at 40px 70px, var(--neon-purple), transparent),
+    radial-gradient(1px 1px at 90px 40px, var(--neon-pink), transparent),
+    radial-gradient(1px 1px at 130px 80px, var(--neon-blue), transparent),
+    radial-gradient(2px 2px at 160px 30px, var(--neon-purple), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: float-particles 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes float-particles {
+  0% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(-10px) translateX(-10px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Cryptobit-style hero section */
+.hero-section {
+  background: var(--dark-gradient);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  font-size: 4.5rem;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--neon-blue);
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Enigmatic cards */
+.mystery-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mystery-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.mystery-card:hover::before {
+  left: 100%;
+}
+
+.mystery-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--neon-blue);
+  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+}
+
+/* Investment CTA buttons */
+.cta-button {
+  background: var(--primary-gradient);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  color: white;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-gradient);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.cta-button:hover::before {
+  left: 0;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* Stats section */
+.stats-section {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 4rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stat-number {
+  font-family: 'Orbitron', monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+
+.stat-label {
+  font-family: 'Rajdhani', sans-serif;
+  color: #888;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+}
+
 body{ background:#282828;}
 a{ font-size:15px !important;}
 p{ font-size:15px !important;}
@@ -12,7 +241,7 @@ header .text-sm {font-size: 18px !important; font-weight: 500; padding: 0px 10px
 header .active{ color:#3e69cc;}
 .bg-purple-600{background-color:#3a3a3a;}
 .text-purple-200{color: rgb(255 255 255);}
-main{background:#282828; padding:0px 70px !important;}
+main{padding:0px 70px !important;}
 footer{ background:#000;  padding: 20px 0px !important;}
 footer p{ color:#fff !important;}
 .buttonbox{box-shadow:none; background:#404040; border: none; border-radius: 10px;    height: 40px;}
@@ -260,17 +489,6 @@ input:checked + .slider:before {
 .aboutdetais h1{ color:#fff; font-size:35px;}
 .aboutdetais p{ color: #fff; font-size:16px !important; margin-bottom: 10px; line-height:28px; text-align:justify;}
 
-.mainslider{ background:#000; padding:70px 0px 75px;}
-.mainslider p{ color:#fff;     font-size: 16px !important; margin-bottom:10px;}
-.mainslider h1{ font-size:45px !important; font-weight:600; color:#fff;font-family: "Rufina", serif;    margin-top: 40px;}
-.mainslider h2 {
-    font-size: 45px !important;
-    font-weight: 600;
-    color: #fff;
-    font-family: "Rufina", serif;
-    margin-top: 14px;
-    margin-bottom:30px;
-}
 .aboutdetais h1{ margin-bottom:20px;}
 .slidersection{ padding:50px 0px;}
 
@@ -303,10 +521,6 @@ input:checked + .slider:before {
   z-index: -1; /* Push canvas behind the content */
 }
 
-.mainslider .container {
-  position: relative;
-  z-index: 1; /* Ensure content is above the canvas */
-}
 canvas{background: #ffffff !important; border-radius: 20px !important; }
 .boxc{padding: 15px; border: 1px solid #464646; border-radius: 10px;}
 .boxc .socialicon i {
@@ -364,9 +578,9 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   .createrightbtn{margin-top: 35px;}
   header .text-sm{font-size: 15px !important; padding: 0px 8px; margin-left:0px !important;}
   header .w-8 {width:80px;}
-  .mainslider{ background:#000; padding:10px 0px 30px;}
-  .mainslider h1{font-size:38px !important;}
-  .mainslider h2{font-size:38px !important;}
+  .hero-section{ padding:10px 0px 30px;}
+  .hero-title{font-size:2.5rem !important;}
+  .hero-subtitle{font-size:1.5rem !important;}
   .tpllogo img {float: left; width: auto; height: 70px; margin-right: 5px;}
   .lgs h1 {margin-top: 31px;}
   .buttonbox{    height: 80px; background:none;}
