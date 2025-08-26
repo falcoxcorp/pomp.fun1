@@ -2122,6 +2122,19 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   opacity: 0;
   cursor: pointer;
   width: auto;
+}
+
+.navbar-logo-enlarged {
+  height: 60px;
+  width: 180px;
+  object-fit: contain;
+  transform: scaleX(1.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-logo-enlarged:hover {
+  transform: scaleX(1.3) scaleY(1.1);
+  filter: drop-shadow(0 0 10px var(--neon-blue));
   margin: 0;
   flex-shrink: 0;
 }
