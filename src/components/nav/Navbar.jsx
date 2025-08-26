@@ -47,6 +47,14 @@ const Navbar = () => {
             >
               {t('KYC')} {/* Use translation key */}
             </NavLink>
+            <a
+              href="https://falcox.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar-link text-sm font-semibold font-bold"
+            >
+              Web Oficial
+            </a>
           </div>
         </div>
 
