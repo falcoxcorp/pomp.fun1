@@ -22,7 +22,7 @@ const Navbar = () => {
           <NavLink to="/" className="w-8 sm:w-[200px]">
             <h1><img src="./logo/logo.png" className="navbar-logo-enlarged" alt="logo" /></h1>
           </NavLink>
-          <div className="navbar-links flex space-x-6">
+          <div className="navbar-links flex space-x-6" style={{marginLeft: '200px'}}>
             <NavLink
               to="/"
               className="navbar-link text-sm font-semibold font-bold"
