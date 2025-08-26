@@ -818,6 +818,7 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   border-radius: 15px;
   padding: 1.5rem;
   transition: all 0.3s ease;
+  color: #ffffff;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -827,6 +828,22 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
   box-shadow: 
     0 8px 30px rgba(0, 0, 0, 0.3),
     0 0 20px rgba(120, 119, 198, 0.3);
+.adminpanel .bsbox h3,
+.adminpanel .bsbox p,
+.adminpanel .bsbox li,
+.adminpanel .bsbox label,
+.adminpanel .bsbox span {
+  color: #ffffff !important;
+}
+
+.adminpanel .bsbox .text-sm {
+  color: #e0e0e0 !important;
+}
+
+.adminpanel .bsbox .text-black {
+  color: #ffffff !important;
+}
+
 }
 
 .adminpanel .bsbox h3 {
