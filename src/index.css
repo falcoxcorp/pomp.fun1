@@ -1016,6 +1016,7 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
 .footer-badges {
   display: flex;
   gap: 1rem;
+}
 
 /* Premium Navbar Styles */
 .premium-navbar {
