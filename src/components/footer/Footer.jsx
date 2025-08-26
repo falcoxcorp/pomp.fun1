@@ -45,6 +45,10 @@ const Footer = () => {
                 <li><a href="/create-token">Create Token</a></li>
                 <li><a href="#">KYC</a></li>
                 <li><a href="#">Whitepaper</a></li>
+                <li><a href="#">Roadmap</a></li>
+              </ul>
+            </div>
+
             {/* Investment Info */}
             <div className="footer-section">
               <h4 className="footer-title">Investment</h4>
@@ -56,7 +60,7 @@ const Footer = () => {
                 <li><a href="#">Support</a></li>
               </ul>
             </div>
-                <li><a href="#">Roadmap</a></li>
+
             {/* Stats */}
             <div className="footer-section">
               <h4 className="footer-title">Platform Stats</h4>
@@ -76,7 +80,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-              </ul>
+
           {/* Footer Bottom */}
           <div className="footer-bottom">
             <div className="footer-divider"></div>
@@ -97,6 +101,5 @@ const Footer = () => {
     </footer>
   );
 };
-            </div>
-  )
-}
+
+export default Footer;
