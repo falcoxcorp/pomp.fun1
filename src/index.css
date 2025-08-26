@@ -1016,6 +1016,171 @@ canvas{background: #ffffff !important; border-radius: 20px !important; }
 .footer-badges {
   display: flex;
   gap: 1rem;
+
+/* Premium Navbar Styles */
+.premium-navbar {
+  position: relative;
+  background: linear-gradient(135deg, rgba(12, 12, 12, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.premium-navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, var(--neon-blue), transparent),
+    radial-gradient(2px 2px at 40px 70px, var(--neon-purple), transparent),
+    radial-gradient(1px 1px at 90px 40px, var(--neon-pink), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: float-particles 25s linear infinite;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.navbar-left,
+.navbar-right {
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-logo {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 15px var(--neon-blue));
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.navbar-logo:hover {
+  filter: drop-shadow(0 0 25px var(--neon-blue));
+  transform: scale(1.1) rotate(5deg);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.navbar-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.navbar-link:hover::before {
+  left: 100%;
+}
+
+.navbar-link:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.navbar-link.active {
+  background: var(--gold-gradient);
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  border-color: #ffd700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.connect-button-wrapper {
+  position: relative;
+}
+
+.premium-wallet-button {
+  background: var(--primary-gradient) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 1.5rem !important;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.premium-wallet-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold-gradient);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.premium-wallet-button:hover::before {
+  left: 0;
+}
+
+.premium-wallet-button:hover {
+  transform: scale(1.05);
+  border-color: var(--neon-blue);
+  box-shadow: 
+    0 8px 25px rgba(0, 212, 255, 0.4),
+    0 0 0 1px rgba(0, 212, 255, 0.3);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive navbar adjustments */
+@media (max-width: 768px) {
+  .navbar-links {
+    gap: 0.5rem;
+  }
+  
+  .navbar-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .premium-wallet-button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem;
+  }
 }
 
 .security-badge,
