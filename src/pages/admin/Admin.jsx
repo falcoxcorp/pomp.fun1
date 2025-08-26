@@ -223,12 +223,25 @@ const Admin = () => {
                 alert("Please fill all fields.");
                 return;
             }
+            
+            // Convert simple numbers to Wei (multiply by 10^18) except for index
+            const configInWei = {
+                index: updatedPoolConfig.index,
+                initialVirtualBaseReserve: (parseFloat(updatedPoolConfig.initialVirtualBaseReserve) * Math.pow(10, 18)).toString(),
+                initialVirtualQuoteReserve: (parseFloat(updatedPoolConfig.initialVirtualQuoteReserve) * Math.pow(10, 18)).toString(),
+                totalSellingBaseAmount: (parseFloat(updatedPoolConfig.totalSellingBaseAmount) * Math.pow(10, 18)).toString(),
+                maxListingBaseAmount: (parseFloat(updatedPoolConfig.maxListingBaseAmount) * Math.pow(10, 18)).toString(),
+                maxListingQuoteAmount: (parseFloat(updatedPoolConfig.maxListingQuoteAmount) * Math.pow(10, 18)).toString(),
+                defaultListingRate: (parseFloat(updatedPoolConfig.defaultListingRate) * Math.pow(10, 18)).toString(),
+                listingFee: (parseFloat(updatedPoolConfig.listingFee) * Math.pow(10, 18)).toString()
+            };
+            
             const tx = await writeContract(config, {
                 address: daimond[1868],
                 abi: MangerAbi,
                 functionName: 'setPoolConfig',
                 chainId: 1868,
-                args: [updatedPoolConfig.index, updatedPoolConfig],
+                args: [configInWei.index, configInWei],
             });
 
             const receipt = await waitForTransactionReceipt(config, {
@@ -527,7 +540,8 @@ const Admin = () => {
 
                             {/* Card 8 */}
                             <div className="bsbox bg-gray-200 p-4 rounded-lg shadow-md">
-                                <h3 className="text-lg font-semibold mb-2">Configurar Pool de Tokens (Valores en Wei)</h3>
+                                <h3 className="text-lg font-semibold mb-2">Configurar Pool de Tokens</h3>
+                                <p className="text-sm text-gray-600 mb-4">Ingresa valores normales (ej: 1000). La conversión a Wei se hace automáticamente.</p>
                                 <input
                                     type="number"
                                     placeholder="Número de Pool (ej: 20)"
@@ -538,49 +552,49 @@ const Admin = () => {
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Reserva Base Inicial (tokens disponibles)"
+                                    placeholder="Tokens Iniciales (ej: 1000000)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.initialVirtualBaseReserve}
                                     onChange={(e) => handlePoolChange('initialVirtualBaseReserve', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Reserva ETH Inicial (precio base)"
+                                    placeholder="ETH Inicial (ej: 30)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.initialVirtualQuoteReserve}
                                     onChange={(e) => handlePoolChange('initialVirtualQuoteReserve', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Total de Tokens para Vender"
+                                    placeholder="Total Tokens Venta (ej: 800000)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.totalSellingBaseAmount}
                                     onChange={(e) => handlePoolChange('totalSellingBaseAmount', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Máximo de Tokens para Listar"
+                                    placeholder="Máx Tokens Listar (ej: 800000)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.maxListingBaseAmount}
                                     onChange={(e) => handlePoolChange('maxListingBaseAmount', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Máximo ETH para Recaudar"
+                                    placeholder="Máx ETH Recaudar (ej: 69)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.maxListingQuoteAmount}
                                     onChange={(e) => handlePoolChange('maxListingQuoteAmount', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Precio por Token (tasa de cambio)"
+                                    placeholder="Precio Token (ej: 1000000)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.defaultListingRate}
                                     onChange={(e) => handlePoolChange('defaultListingRate', e.target.value)}
                                 />
                                 <input
                                     type="number"
-                                    placeholder="Comisión por Listar Token"
+                                    placeholder="Comisión Listar (ej: 1)"
                                     className="w-full p-2 mb-4 border rounded-md border-gray-300 focus:ring-2 focus:ring-blue-500"
                                     value={updatedPoolConfig.listingFee}
                                     onChange={(e) => handlePoolChange('listingFee', e.target.value)}
